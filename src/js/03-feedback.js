@@ -12,11 +12,10 @@ function getCurrentValue(event) {
       } = event.currentTarget;
       const form = {email: email.value, message: message.value};
     console.log(form);
-   
-localStorage.setItem('feedback-form-state', JSON.stringify({email: email.value, message: message.value}));
-
+  if (email.value && message.value ) {
+localStorage.setItem('feedback-form-state', JSON.stringify({...form, email: email.value, message: message.value}));
 }
-
+}
 
 formInputEl.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
