@@ -32,7 +32,6 @@ function handleSubmit(event) {
   event.currentTarget.reset();
  }
 
-
  const fillForm = () => {
     const objFromLocalStorage = JSON.parse(localStorage.getItem('feedback-form-state'));
   
