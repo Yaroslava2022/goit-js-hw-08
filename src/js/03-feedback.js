@@ -6,7 +6,7 @@ const messageEl = formInputEl.message;
  formInputEl.addEventListener("input", trottle(getCurrentValue, 500))
 
 function getCurrentValue(event) {
-   
+   if (event.currentTarget) {
     const {
       elements: { email, message },
       } = event.currentTarget;
@@ -16,6 +16,8 @@ function getCurrentValue(event) {
 localStorage.setItem('feedback-form-state', JSON.stringify({...form, email: email.value, message: message.value}));
 }
 }
+}
+
 
 formInputEl.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
